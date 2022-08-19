@@ -25,4 +25,4 @@ Released on August 24th, 2022.
 
 ### Added
 
-- `execute_notebook` task - [#1](https://github.com/PrefectHQ/prefect-jupyter/pull/1)
+- `execute_notebook` task - [#2](https://github.com/PrefectHQ/prefect-jupyter/pull/2)
