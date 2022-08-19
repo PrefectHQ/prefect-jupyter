@@ -1,16 +1,19 @@
 """Module containing tasks for interacting with Jupyter."""
 
 from enum import Enum
-from typing import Optional, Dict, Any
+from typing import Any, Dict, Optional
 
 import nbconvert
 import nbformat
 import papermill as pm
-
 from prefect import task
 
 
 class OutputFormat(Enum):
+    """
+    Valid output formats of a notebook.
+    """
+
     ASCIIDOC = "asciidoc"
     CUSTOM = "custom"
     HTML = "html"
@@ -40,7 +43,7 @@ def execute_notebook(
     In order to parametrize the notebook, you need to mark the parameters
     cell as described in the [papermill documentation](
     https://papermill.readthedocs.io/en/latest/usage-parameterize.html).
-    
+
     Args:
         path: Where to fetch the notebook from; can be a cloud storage path.
         parameters: Parameters to use for the notebook.
@@ -48,7 +51,7 @@ def execute_notebook(
         output_format: The notebook output format.
         kernel_name: Name of kernel to execute the notebook against.
         **export_kwargs: Additional keyword arguments to pass to `nbconvert.export`.
-    
+
     Returns:
         The body of the output.
 
