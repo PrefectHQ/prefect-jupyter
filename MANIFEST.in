@@ -1,0 +1,2 @@
+include versioneer.py
+include prefect_jupyter/_version.py
