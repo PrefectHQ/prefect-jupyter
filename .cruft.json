@@ -9,7 +9,7 @@
       "github_organization": "PrefectHQ",
       "collection_name": "prefect-jupyter",
       "collection_slug": "prefect_jupyter",
-      "collection_short_description": "Prefect integrations for interacting with Google Cloud Platform.",
+      "collection_short_description": "Prefect integrations for interacting with Jupyter.",
       "_copy_without_render": [
         ".github/workflows/*.yml"
       ],
