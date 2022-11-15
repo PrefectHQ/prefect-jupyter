@@ -7,6 +7,7 @@ import nbconvert
 import nbformat
 import papermill as pm
 from prefect import task
+from prefect.context import FlowRunContext
 
 
 class OutputFormat(Enum):
@@ -77,7 +78,7 @@ def execute_notebook(
     """
     nb: nbformat.NotebookNode = pm.execute_notebook(
         path,
-        "-",
+        None,
         parameters=parameters,
         kernel_name=kernel_name,
         log_output=log_output,
