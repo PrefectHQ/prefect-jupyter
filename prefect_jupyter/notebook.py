@@ -33,9 +33,8 @@ def execute_notebook(
     path: str,
     parameters: Optional[Dict[str, Any]] = None,
     log_output: bool = False,
-    output_format: OutputFormat = OutputFormat.NOTEBOOK,
     kernel_name: Optional[str] = None,
-    **export_kwargs: Dict[str, Any],
+    **execute_kwargs: Dict[str, Any],
 ) -> str:
     """
     Task for running Jupyter Notebooks.
@@ -48,41 +47,39 @@ def execute_notebook(
         path: Where to fetch the notebook from; can be a cloud storage path.
         parameters: Parameters to use for the notebook.
         log_output: Whether or not to log notebook cell output to the papermill logger.
-        output_format: The notebook output format.
         kernel_name: Name of kernel to execute the notebook against.
-        **export_kwargs: Additional keyword arguments to pass to `nbconvert.export`.
+        **execute_kwargs: Additional keyword arguments to pass to `execute_notebook`.
 
     Returns:
-        The body of the output.
-
-    Examples:
-        Run a parameterized notebook.
-        ```python
-        from prefect import flow
-        from prefect_jupyter import notebook
-
-        @flow
-        def example_execute_notebook():
-            body = notebook.execute_notebook(
-                "test_notebook.ipynb",
-                parameters={"num": 5}
-            )
-            output_path = "executed_notebook.ipynb"
-            with open(output_path, "w") as f:
-                f.write(body)
-            return output_path
-
-        example_execute_notebook()
-        ```
+        The NotebookNode object of the executed notebook.
     """
-    nb: nbformat.NotebookNode = pm.execute_notebook(
+    return pm.execute_notebook(
         path,
         "-",
         parameters=parameters,
         kernel_name=kernel_name,
         log_output=log_output,
+        **execute_kwargs,
     )
 
+
+@task
+def export_notebook(
+    nb: nbformat.NotebookNode,
+    output_format: OutputFormat = OutputFormat.NOTEBOOK,
+    **export_kwargs: Dict[str, Any],
+) -> str:
+    """
+    Task for exporting a NotebookNode.
+
+    Args:
+        nb: The notebook to export.
+        output_format: The notebook output format.
+        **export_kwargs: Additional keyword arguments to pass to `nbconvert.export`.
+
+    Returns:
+        The body of the output.
+    """
     exporter = nbconvert.get_exporter(output_format.value)
     body, _ = nbconvert.export(exporter, nb, **export_kwargs)
     return body

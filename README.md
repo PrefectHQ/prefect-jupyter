@@ -46,10 +46,11 @@ from prefect_jupyter import notebook
 
 @flow
 def example_execute_notebook():
-    body = notebook.execute_notebook(
+    nb = notebook.execute_notebook(
         "test_notebook.ipynb",
         parameters={"num": 5}
     )
+    body = notebook.export_notebook(nb)
     output_path = "executed_notebook.ipynb"
     with open(output_path, "w") as f:
         f.write(body)

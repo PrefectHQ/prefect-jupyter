@@ -8,9 +8,12 @@ from prefect_jupyter import notebook
 
 def test_execute_notebook():
     file_path = Path(__file__).parent.resolve()
-    body = notebook.execute_notebook.fn(
+    nb = notebook.execute_notebook.fn(
         file_path / "test_notebook.ipynb", parameters={"num": 5}
     )
+    assert len(nb.cells) == 3
+
+    body = notebook.export_notebook.fn(nb)
     contents = json.loads(body)
     assert len(contents["cells"]) == 3  # generates a parameter cell
 
