@@ -100,6 +100,29 @@ def export_notebook(
 
     Returns:
         The body of the output.
+
+    Examples:
+        Export a notebook to HTML
+        ```python
+        import nbformat
+        from prefect import flow
+
+        from prefect_jupyter import notebook
+
+        @flow
+        def example_export_notebook():
+            with open("example_notebook.ipynb", "r") as f:
+                nb = nbformat.read(f, as_version=4)
+
+            html_body = notebook.export_notebook(
+                nb, output_format=notebook.OutputFormat.HTML
+            )
+
+            with open("exported_notebook.html", "w") as f:
+                f.write(html_body)
+
+        example_export_notebook()
+        ```
     """
     exporter = nbconvert.get_exporter(output_format.value)
     body, _ = nbconvert.export(exporter, nb, **export_kwargs)
