@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added a new task `export_notebook` to export a notebook using nbconvert, this was stripped from the `execute_notebook` task to allow for more flexibility in the future.
 
 ### Changed
-- Breaking: `execute_notebook` now accepts arbitrary `execute_kwargs` instead of `export_kwargs` and no longer accepts `output_format`
+- Breaking: `execute_notebook` now accepts arbitrary `execute_kwargs` instead of `export_kwargs` and no longer accepts `output_format`.
 - `execute_notebook` task will not redirect the executed notebook contents to stdout.
 
 ### Deprecated
