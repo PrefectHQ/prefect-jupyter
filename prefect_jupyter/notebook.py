@@ -76,7 +76,7 @@ def execute_notebook(
     """
     return pm.execute_notebook(
         path,
-        "-",
+        None,
         parameters=parameters,
         kernel_name=kernel_name,
         log_output=log_output,
