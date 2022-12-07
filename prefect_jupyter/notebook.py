@@ -52,6 +52,27 @@ def execute_notebook(
 
     Returns:
         The NotebookNode object of the executed notebook.
+
+    Examples:
+        Run a parameterized notebook.
+        ```python
+        from prefect import flow
+        from prefect_jupyter import notebook
+
+        @flow
+        def example_execute_notebook():
+            nb = notebook.execute_notebook(
+                "test_notebook.ipynb",
+                parameters={"num": 5}
+            )
+            body = notebook.export_notebook(nb)
+            output_path = "executed_notebook.ipynb"
+            with open(output_path, "w") as f:
+                f.write(body)
+            return output_path
+
+        example_execute_notebook()
+        ```
     """
     return pm.execute_notebook(
         path,
