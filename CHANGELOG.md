@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Breaking: `execute_notebook` now accepts arbitrary `execute_kwargs` instead of `export_kwargs` and no longer accepts `output_format`
-- `execute_notebook` task will not redirect the executed notebook contents to stdout by default
+- `execute_notebook` task will not redirect the executed notebook contents to stdout.
 
 ### Deprecated
 
