@@ -6,7 +6,7 @@ import pytest
 from prefect_jupyter import notebook
 
 
-def test_execute_notebook():
+def test_execute_and_export_notebook():
     file_path = Path(__file__).parent.resolve()
     nb = notebook.execute_notebook.fn(
         file_path / "test_notebook.ipynb", parameters={"num": 5}
