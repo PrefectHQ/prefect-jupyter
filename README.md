@@ -39,6 +39,9 @@ pip install prefect-jupyter
 ```
 
 ### Run a parameterized notebook
+prefect-jupyter uses papermill under the hood. Check out [papermill's documentation](https://papermill.readthedocs.io/en/latest/usage-parameterize.html) to learn how to parametrize the notebook.
+
+The following code shows how to run a parameterized notebook:
 
 ```python
 from prefect import flow
