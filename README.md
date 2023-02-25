@@ -1,11 +1,13 @@
 # prefect-jupyter
 
 <p align="center">
+    <!--- Insert a cover image here -->
+    <!--- <br> -->
     <a href="https://pypi.python.org/pypi/prefect-jupyter/" alt="PyPI version">
         <img alt="PyPI" src="https://img.shields.io/pypi/v/prefect-jupyter?color=0052FF&labelColor=090422"></a>
     <a href="https://github.com/PrefectHQ/prefect-jupyter/" alt="Stars">
         <img src="https://img.shields.io/github/stars/PrefectHQ/prefect-jupyter?color=0052FF&labelColor=090422" /></a>
-    <a href="https://pepy.tech/badge/prefect-jupyter/" alt="Downloads">
+    <a href="https://pypistats.org/packages/prefect-jupyter/" alt="Downloads">
         <img src="https://img.shields.io/pypi/dm/prefect-jupyter?color=0052FF&labelColor=090422" /></a>
     <a href="https://github.com/PrefectHQ/prefect-jupyter/pulse" alt="Activity">
         <img src="https://img.shields.io/github/commit-activity/m/PrefectHQ/prefect-jupyter?color=0052FF&labelColor=090422" /></a>
