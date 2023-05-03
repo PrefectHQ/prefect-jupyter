@@ -1,11 +1,13 @@
 # prefect-jupyter
 
 <p align="center">
+    <!--- Insert a cover image here -->
+    <!--- <br> -->
     <a href="https://pypi.python.org/pypi/prefect-jupyter/" alt="PyPI version">
         <img alt="PyPI" src="https://img.shields.io/pypi/v/prefect-jupyter?color=0052FF&labelColor=090422"></a>
     <a href="https://github.com/PrefectHQ/prefect-jupyter/" alt="Stars">
         <img src="https://img.shields.io/github/stars/PrefectHQ/prefect-jupyter?color=0052FF&labelColor=090422" /></a>
-    <a href="https://pepy.tech/badge/prefect-jupyter/" alt="Downloads">
+    <a href="https://pypistats.org/packages/prefect-jupyter/" alt="Downloads">
         <img src="https://img.shields.io/pypi/dm/prefect-jupyter?color=0052FF&labelColor=090422" /></a>
     <a href="https://github.com/PrefectHQ/prefect-jupyter/pulse" alt="Activity">
         <img src="https://img.shields.io/github/commit-activity/m/PrefectHQ/prefect-jupyter?color=0052FF&labelColor=090422" /></a>
@@ -64,23 +66,31 @@ example_execute_notebook()
 
 ## Resources
 
+### Feedback
+
 If you encounter any bugs while using `prefect-jupyter`, feel free to open an issue in the [prefect-jupyter](https://github.com/PrefectHQ/prefect-jupyter) repository.
 
 If you have any questions or issues while using `prefect-jupyter`, you can find help in either the [Prefect Discourse forum](https://discourse.prefect.io/) or the [Prefect Slack community](https://prefect.io/slack).
 
-Feel free to ⭐️ or watch [`prefect-jupyter`](https://github.com/PrefectHQ/prefect-jupyter) for updates too!
+Feel free to star or watch [`prefect-jupyter`](https://github.com/PrefectHQ/prefect-jupyter) for updates too!
 
-## Development
+## Contributing
 
-If you'd like to install a version of `prefect-jupyter` for development, clone the repository and perform an editable install with `pip`:
+If you'd like to help contribute to fix an issue or add a feature to `prefect-jupyter`, please [propose changes through a pull request from a fork of the repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
 
+Here are the steps:
+ 
+1. [Fork the repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository)
+2. [Clone the forked repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository)
+3. Install the repository and its dependencies:
 ```bash
-git clone https://github.com/PrefectHQ/prefect-jupyter.git
-
-cd prefect-jupyter/
-
-pip install -e ".[dev]"
-
-# Install linting pre-commit hooks
-pre-commit install
+ pip install -e ".[dev]"
 ```
+4. Make desired changes
+5. Add tests
+6. Insert an entry to [CHANGELOG.md](https://github.com/PrefectHQ/prefect-jupyter/blob/main/CHANGELOG.md)
+7. Install `pre-commit` to perform quality checks prior to commit:
+```bash
+ pre-commit install
+ ```
+8. `git commit`, `git push`, and create a pull request
