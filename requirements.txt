@@ -1,4 +1,4 @@
-prefect>=2.0.0
+prefect>=2.13.5
 papermill>=2.2.0
 nbconvert>=6.0.7
 ipykernel>=6.9.2
